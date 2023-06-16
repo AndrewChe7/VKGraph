@@ -1,22 +1,22 @@
 
-import vk
+import vk_api
 import json
 
 
 TOKEN = ''
-session = vk.Session(access_token=TOKEN)
-api = vk.API(session, v='5.35', lang='ru', timeout=10)
+session = vk_api.VkApi(token=TOKEN)
 
+vkses = session.get_api()
 users = []
 links = []
 
 
 def get_user (user_id):
-	return api.users.get(user_ids=user_id)[0]
+	return vkses.users.get(user_ids=user_id)[0]
 
 
 def get_friends (user_id):
-	return api.friends.get(user_id=user_id)['items']
+	return vkses.friends.get(user_id=user_id)['items']
 
 
 def add_user (user):
