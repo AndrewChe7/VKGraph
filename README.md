@@ -7,7 +7,7 @@ Simple VK friends graph creator and viewer
 ## How to
 1. Firstly you need to install VK API module
 ``` bash
-pip install vk
+pip install vk_api
 ```
 
 2. Set TOKEN in Creator/main.py (you can get token in [vk.com/dev](https://vk.com/dev))
