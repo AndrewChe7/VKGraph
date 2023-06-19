@@ -77,11 +77,12 @@ def users_json():
 
 
 def main ():
-    id = input('ID: ')
+    ids = input('ID: ').split(',')
     how_deep = int(input('How deep? '))
-    user = get_user(id)
-    id = user['id']
-    user_ids.add(id)
+    users = [get_user(id) for id in ids]
+    ids = [user['id'] for user in users]
+    for id in ids:
+        user_ids.add(id)
     print('Getting users ids...')
     for i in range(how_deep):
         print(f'Step {i+1}')
